@@ -1,7 +1,8 @@
-import { research, SectionId } from '../../data/data';
-import Section from '../Layout/Section';
+import React, { memo } from 'react'; // Memo import added
+import { research, SectionId } from '../../data/data'; // External import
+import Section from '../Layout/Section'; // Internal import
 
-const ResearchSection = () => {
+const ResearchSection = memo(() => {
   // Log the research data to check if it is an array and contains the expected data
   console.log(research); // This will log the data in the browser console
 
@@ -28,6 +29,8 @@ const ResearchSection = () => {
       </ul>
     </Section>
   );
-};
+});
+
+ResearchSection.displayName = 'ResearchSection';
 
 export default ResearchSection;

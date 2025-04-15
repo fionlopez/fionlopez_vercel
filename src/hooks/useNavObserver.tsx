@@ -1,5 +1,6 @@
-import { useEffect } from 'react';
-import { SectionId } from '../data/data';
+import {useEffect} from 'react';
+
+import {SectionId} from '../data/data';
 
 export const useNavObserver = (
   selectors: string,
@@ -10,18 +11,14 @@ export const useNavObserver = (
 
     const observer = new IntersectionObserver(
       (entries) => {
-        let mostVisible: { id: string; ratio: number } | null = null;
+        let mostVisible: {id: string; ratio: number} | null = null;
 
         for (const entry of entries) {
           const id = entry.target.getAttribute('id');
           if (!id) continue;
 
-          // Only consider entries actually intersecting
           if (entry.isIntersecting) {
-            if (
-              !mostVisible ||
-              entry.intersectionRatio > mostVisible.ratio
-            ) {
+            if (!mostVisible || entry.intersectionRatio > mostVisible.ratio) {
               mostVisible = {
                 id,
                 ratio: entry.intersectionRatio,
@@ -36,8 +33,8 @@ export const useNavObserver = (
       },
       {
         root: null,
-        threshold: [0.25, 0.5, 0.75], // Trigger on varying visibility
-        rootMargin: '0px 0px -40% 0px', // Favor mid-screen sections
+        threshold: [0.25, 0.5, 0.75],
+        rootMargin: '0px 0px -40% 0px',
       }
     );
 

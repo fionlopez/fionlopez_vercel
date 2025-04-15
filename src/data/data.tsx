@@ -4,6 +4,10 @@ import {
 } from '@heroicons/react/24/outline';
 import profileImage from '../images/profile.jpg';
 import heroImage from '../images/header-background.webp';
+import outreachImage from '../images/outreach_1.webp'; // Static image import
+import outreachImage2 from '../images/outreach_2.jpg';
+import Loines from '../images/Loines.jpg';
+import moon from '../images/moon.jpg';
 import {
   Hero,
   HomepageMeta,
@@ -35,31 +39,32 @@ export type SectionId = (typeof SectionId)[keyof typeof SectionId];
  * Hero section
  */
 export const heroData: Hero = {
-  imageSrc: heroImage,
-  profilePic: profileImage, // Add this line to include the profile image
-  name: `Fiona Lopez`,
+  actions: [
+    {
+      href: '/assets/Fiona_Lopez_CV.pdf', // Ensure the CV is placed in the public/assets directory
+      Icon: ArrowDownTrayIcon,
+      primary: true,
+      text: 'Curriculum Vitae (CV)',
+    },
+    {
+      href: `#${SectionId.Contact}`,
+      primary: false,
+      text: 'Contact',
+    },
+  ],
   description: (
     <div>
       <p className="text-lg text-gray-200">
         I'm a graduate student pursuing my PhD in Astronomy at New Mexico State University, 
         with a B.S. in Physics. My research interests focus on galaxy clusters and high-redshift galaxies.
       </p>
-      </div>
+    </div>
   ),
-  actions: [
-    {
-      href: '/assets/Fiona_Lopez_CV.pdf', // Ensure the CV is placed in the public/assets directory
-      text: 'Curriculum Vitae (CV)',
-      primary: true,
-      Icon: ArrowDownTrayIcon,
-    },
-    {
-      href: `#${SectionId.Contact}`,
-      text: 'Contact',
-      primary: false,
-    },
-  ],
+  imageSrc: heroImage,
+  name: `Fiona Lopez`,
+  profilePic: profileImage, // Add this line to include the profile image
 };
+
 
 
 
@@ -219,10 +224,6 @@ export const publications = {
 };
 
 // data.tsx
-import outreachImage from '../images/outreach_1.webp'; // Static image import
-import outreachImage2 from '../images/outreach_2.jpg';
-import Loines from '../images/Loines.jpg';
-import moon from '../images/moon.jpg'
 export const outreach = [
   {
     location: 'Texas A&M University',

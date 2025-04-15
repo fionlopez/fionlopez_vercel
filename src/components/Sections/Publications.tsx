@@ -1,8 +1,8 @@
-import React from 'react';
-import { publications, SectionId } from '../../data/data';
-import Section from '../Layout/Section';
+import React, { memo } from 'react'; // Memo import added
+import { publications, SectionId } from '../../data/data'; // External import
+import Section from '../Layout/Section'; // Internal import
 
-const PublicationsSection = () => {
+const PublicationsSection = memo(() => {
   // Separate papers and posters
   const researchPapers = publications.papers;
   const conferencePosters = publications.posters;
@@ -20,9 +20,9 @@ const PublicationsSection = () => {
               {item.citation && (
                 <div className="text-gray-200">
                   {/* Apply italic selectively */}
-                  {React.Children.map(item.citation, (child) => 
+                  {React.Children.map(item.citation, (child) =>
                     typeof child === 'string' ? (
-                      <span>{child}</span> 
+                      <span>{child}</span>
                     ) : (
                       child
                     )
@@ -52,6 +52,8 @@ const PublicationsSection = () => {
       </div>
     </Section>
   );
-};
+});
+
+PublicationsSection.displayName = 'PublicationsSection';
 
 export default PublicationsSection;

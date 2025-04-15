@@ -1,9 +1,10 @@
-import { outreach, SectionId } from '../../data/data';
-import Section from '../Layout/Section';
-import type { StaticImageData } from 'next/image';
-import Image from 'next/image'; // Import Next.js Image component
+import { FC, memo } from 'react';
+import { StaticImageData } from 'next/image'; // Importing types
+import Image from 'next/image';
+import { outreach, SectionId } from '../../data/data'; // Internal import
+import Section from '../Layout/Section'; // Internal import
 
-const OutreachSection = () => {
+const OutreachSection: FC = memo(() => {
   return (
     <Section sectionId={SectionId.Outreach}>
       <h2 className="text-4xl font-bold text-gray-300 mb-6">Outreach</h2>
@@ -27,27 +28,28 @@ const OutreachSection = () => {
                 typeof img === 'string' ? (
                   <img
                     key={i}
-                    src={img}
                     alt={`${item.title} image ${i + 1}`}
                     className="w-full h-auto rounded-lg shadow-lg max-w-xl mx-auto"
+                    src={img}
                   />
                 ) : (
                   <Image
-                     key={i}
-                    src={img}
+                    key={i}
                     alt={`${item.title} image ${i + 1}`}
-                    width={1600}
-                    height={1200}
                     className="w-full h-auto rounded-lg shadow-lg max-w-xl mx-auto"
+                    height={1200}
+                    width={1600}
+                    src={img}
                   />
                 )
-                )}
+              )}
             </div>
           </li>
         ))}
       </ul>
     </Section>
   );
-};
+});
 
+OutreachSection.displayName = 'OutreachSection';
 export default OutreachSection;
