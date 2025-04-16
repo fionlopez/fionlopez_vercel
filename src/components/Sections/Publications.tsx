@@ -8,7 +8,7 @@ const PublicationsSection = memo(() => {
   const conferencePosters = publications.posters;
 
   return (
-    <Section sectionId={SectionId.Publications}>
+    <Section sectionId={SectionId.Publications} className="bg-black text-white">
       <h2 className="text-4xl font-bold text-gray-300 mb-6">Publications</h2>
 
       {/* Research Papers Subsection */}

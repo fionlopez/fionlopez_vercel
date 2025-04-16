@@ -6,7 +6,7 @@ import Section from '../Layout/Section'; // Internal import
 
 const OutreachSection: FC = memo(() => {
   return (
-    <Section sectionId={SectionId.Outreach}>
+    <Section sectionId={SectionId.Outreach} className="bg-black text-white">
       <h2 className="text-4xl font-bold text-gray-300 mb-6">Outreach</h2>
 
       <ul className="space-y-12">

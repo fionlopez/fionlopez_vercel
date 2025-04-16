@@ -7,7 +7,7 @@ const ResearchSection = memo(() => {
   console.log(research); // This will log the data in the browser console
 
   return (
-    <Section sectionId={SectionId.Research}>
+    <Section sectionId={SectionId.Research} className="bg-black text-white">
       {/* "Research" title with bigger font and lighter grey */}
       <h2 className="text-4xl font-bold text-gray-300 mb-6">Research</h2> {/* Bigger and lighter grey */}
       <ul className="space-y-6">

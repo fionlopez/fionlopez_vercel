@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import {NextPage} from 'next';
 import Head from 'next/head';
 import {useRouter} from 'next/router';
@@ -17,8 +18,6 @@ const Page: NextPage<PropsWithChildren<HomepageMeta>> = memo(({children, title, 
         {/* several domains list the same content, make sure google knows we mean this one. */}
         <link href={`https://reactresume.com${pathname}`} key="canonical" rel="canonical" />
 
-        <link href="/favicon.ico" rel="icon" sizes="any" />
-        <link href="/icon.svg" rel="icon" type="image/svg+xml" />
         <link href="/apple-touch-icon.png" rel="apple-touch-icon" />
         <link href="/site.webmanifest" rel="manifest" />
 
@@ -31,7 +30,10 @@ const Page: NextPage<PropsWithChildren<HomepageMeta>> = memo(({children, title, 
         <meta content={title} name="twitter:title" />
         <meta content={description} name="twitter:description" />
       </Head>
-      {children}
+
+      {/* 🔽 Background wrapper added here */}
+      <div style={{ backgroundColor: '#f0f2f5', minHeight: '100vh' }}>{children}</div>
+
     </>
   );
 });
