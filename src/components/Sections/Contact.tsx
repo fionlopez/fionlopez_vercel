@@ -1,11 +1,10 @@
-import React, { FC } from 'react'; // Import React explicitly for TypeScript
-
-import { SectionId } from '../../data/data'; // Internal import
-import Section from '../Layout/Section'; // Internal import
+import React,{FC} from 'react';
+import {SectionId} from '../../data/data';
+import Section from '../Layout/Section';
 
 const Contact: FC = React.memo(() => {
   return (
-    <Section className="bg-gray-900 text-white py-16" sectionId={SectionId.Contact}>
+    <Section sectionId={SectionId.Contact} className="bg-gray-900 text-white py-16">
       <div className="max-w-2xl mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold mb-4">Contact</h2>
         <div className="text-lg text-gray-200">
