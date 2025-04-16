@@ -12,8 +12,8 @@ import {Hero, HomepageMeta, TimelineItem} from './dataDef';
  * Page meta data
  */
 export const homePageMeta: HomepageMeta = {
-  title: 'React Resume Template',
-  description: "Example site built with Tim Baker's react resume template",
+  title: 'Fiona Lopez',
+  description: ' ',
 };
 
 /**
