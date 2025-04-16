@@ -1,6 +1,7 @@
-import React,{FC} from 'react';
-import {SectionId} from '../../data/data';
+import React, {FC} from 'react';
+
 import Section from '../Layout/Section';
+import {SectionId} from '../../data/data';
 
 const Contact: FC = React.memo(() => {
   return (
