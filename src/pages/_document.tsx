@@ -1,21 +1,18 @@
-import {Head, Html, Main, NextScript} from 'next/document';
-
-// next/document <Head /> vs next/head <Head />
-//
-// next/document Head is rendered once on the server. This is different from next/head which will
-// rebuild the next/head fields each time it's called, and won't overwrite next/document's Head.
+/* eslint-disable prettier/prettier */
+import { Html, Head, Main, NextScript } from 'next/document';
 
 export default function Document() {
   return (
     <Html lang="en">
       <Head>
         <meta charSet="utf-8" />
-        {/* google translate breaks react:
-          - https://github.com/facebook/react/issues/11538
-          - https://bugs.chromium.org/p/chromium/issues/detail?id=872770 */}
         <meta content="notranslate" name="google" />
+        <meta name="description" content="Your default description" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* Set the global title here */}
+        <title>Fiona Lopez</title>
       </Head>
-      <body className="bg-black">
+      <body>
         <Main />
         <NextScript />
       </body>
