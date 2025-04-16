@@ -25,7 +25,7 @@ const Home: FC = memo(() => {
       {
         root: null,
         threshold: 0.5,
-      }
+      },
     );
 
     const heroElement = document.getElementById('hero');

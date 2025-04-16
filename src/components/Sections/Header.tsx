@@ -1,11 +1,11 @@
-import { Dialog, Transition } from '@headlessui/react';
-import { Bars3BottomRightIcon } from '@heroicons/react/24/outline';
+import {Dialog, Transition} from '@headlessui/react';
+import {Bars3BottomRightIcon} from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import Link from 'next/link';
-import { FC, Fragment, memo, useCallback, useState } from 'react';
+import {FC, Fragment, memo, useCallback, useState} from 'react';
 
-import { SectionId } from '../../data/data'; // Assuming this contains { Hero, About, Research, Publications, Outreach }
-import { useNavObserver } from '../../hooks/useNavObserver';
+import {SectionId} from '../../data/data'; // Assuming this contains { Hero, About, Research, Publications, Outreach }
+import {useNavObserver} from '../../hooks/useNavObserver';
 
 export const headerID = 'headerNav';
 
@@ -14,7 +14,7 @@ interface HeaderProps {
   isHeroVisible: boolean;
 }
 
-const Header: FC<HeaderProps> = memo(({ isHeroVisible }) => {
+const Header: FC<HeaderProps> = memo(({isHeroVisible}) => {
   const [currentSection, setCurrentSection] = useState<SectionId | null>(null);
 
   const intersectionHandler = useCallback((section: SectionId | null) => {
@@ -30,7 +30,7 @@ const Header: FC<HeaderProps> = memo(({ isHeroVisible }) => {
     SectionId.Contact,
   ];
 
-  useNavObserver(navSections.map((section) => `#${section}`).join(','), intersectionHandler);
+  useNavObserver(navSections.map(section => `#${section}`).join(','), intersectionHandler);
 
   return (
     <div>
@@ -44,7 +44,7 @@ const DesktopNav: FC<{
   navSections: SectionId[];
   currentSection: SectionId | null;
   isHeroVisible: boolean;
-}> = memo(({ navSections, currentSection, isHeroVisible }) => {
+}> = memo(({navSections, currentSection, isHeroVisible}) => {
   const baseClass =
     '-m-1.5 p-1.5 rounded-md font-bold first-letter:uppercase hover:transition-colors hover:duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 sm:hover:text-orange-500 text-neutral-100';
   const activeClass = classNames(baseClass, 'text-orange-500');
@@ -53,7 +53,7 @@ const DesktopNav: FC<{
   return (
     <header className="fixed top-0 z-50 hidden w-full bg-neutral-900/50 p-4 backdrop-blur sm:block" id={headerID}>
       <nav className="flex justify-center gap-x-8">
-        {navSections.map((section) => (
+        {navSections.map(section => (
           <NavItem
             activeClass={activeClass}
             current={section === currentSection}
@@ -72,7 +72,7 @@ const MobileNav: FC<{
   navSections: SectionId[];
   currentSection: SectionId | null;
   isHeroVisible: boolean;
-}> = memo(({ navSections, currentSection, isHeroVisible }) => {
+}> = memo(({navSections, currentSection, isHeroVisible}) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const toggleOpen = useCallback(() => {
@@ -115,7 +115,7 @@ const MobileNav: FC<{
             leaveTo="-translate-x-full">
             <div className="relative w-4/5 bg-stone-800">
               <nav className="mt-5 flex flex-col gap-y-2 px-2">
-                {navSections.map((section) => (
+                {navSections.map(section => (
                   <NavItem
                     activeClass={activeClass}
                     current={section === currentSection}
@@ -142,7 +142,7 @@ const NavItem: FC<{
   inactiveClass: string;
   onClick?: () => void;
   isHeroVisible: boolean;
-}> = memo(({ section, current, inactiveClass, activeClass, onClick }) => {
+}> = memo(({section, current, inactiveClass, activeClass, onClick}) => {
   // Update the condition to only rely on 'current' state for active sections
   const isActive = current;
 

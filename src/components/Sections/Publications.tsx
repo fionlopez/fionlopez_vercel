@@ -1,5 +1,5 @@
-import React, { memo } from 'react'; // Memo import added
-import { publications, SectionId } from '../../data/data'; // External import
+import React, {memo} from 'react'; // Memo import added
+import {publications, SectionId} from '../../data/data'; // External import
 import Section from '../Layout/Section'; // Internal import
 
 const PublicationsSection = memo(() => {
@@ -20,12 +20,8 @@ const PublicationsSection = memo(() => {
               {item.citation && (
                 <div className="text-gray-200">
                   {/* Apply italic selectively */}
-                  {React.Children.map(item.citation, (child) =>
-                    typeof child === 'string' ? (
-                      <span>{child}</span>
-                    ) : (
-                      child
-                    )
+                  {React.Children.map(item.citation, child =>
+                    typeof child === 'string' ? <span>{child}</span> : child,
                   )}
                 </div>
               )}

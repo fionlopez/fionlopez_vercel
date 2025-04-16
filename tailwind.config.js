@@ -1,7 +1,8 @@
-// eslint-disable-next-line no-undef
-module.exports = {
+import pluginForms from '@tailwindcss/forms';
+import pluginTypography from '@tailwindcss/typography';
+
+export default {
   content: ['./src/**/*.{js,ts,jsx,tsx,css,scss}'],
-  // darkMode: 'media', // or 'media' or 'class'
   theme: {
     extend: {
       colors: {
@@ -33,6 +34,5 @@ module.exports = {
       },
     },
   },
-  // eslint-disable-next-line no-undef
-  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
+  plugins: [pluginForms, pluginTypography],
 };

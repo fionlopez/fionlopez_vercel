@@ -90,7 +90,7 @@ export interface PortfolioItem {
 export type TimelineItem = {
   date: string;
   location: string;
-  title?: string; // 
+  title?: string; //
   content: JSX.Element;
 };
 

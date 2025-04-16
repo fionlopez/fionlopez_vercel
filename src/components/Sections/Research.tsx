@@ -1,5 +1,5 @@
-import React, { memo } from 'react'; // Memo import added
-import { research, SectionId } from '../../data/data'; // External import
+import React, {memo} from 'react'; // Memo import added
+import {research, SectionId} from '../../data/data'; // External import
 import Section from '../Layout/Section'; // Internal import
 
 const ResearchSection = memo(() => {
@@ -10,7 +10,6 @@ const ResearchSection = memo(() => {
     <Section sectionId={SectionId.Research}>
       {/* "Research" title with bigger font and lighter grey */}
       <h2 className="text-4xl font-bold text-gray-300 mb-6">Research</h2> {/* Bigger and lighter grey */}
-
       <ul className="space-y-6">
         {research.map((item, index) => (
           <li key={index} className="border-l-4 border-blue-500 pl-4">

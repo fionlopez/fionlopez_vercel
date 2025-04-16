@@ -2,15 +2,12 @@ import {useEffect} from 'react';
 
 import {SectionId} from '../data/data';
 
-export const useNavObserver = (
-  selectors: string,
-  handler: (section: SectionId | null) => void
-) => {
+export const useNavObserver = (selectors: string, handler: (section: SectionId | null) => void) => {
   useEffect(() => {
     const headings = document.querySelectorAll<HTMLElement>(selectors);
 
     const observer = new IntersectionObserver(
-      (entries) => {
+      entries => {
         let mostVisible: {id: string; ratio: number} | null = null;
 
         for (const entry of entries) {
@@ -35,10 +32,10 @@ export const useNavObserver = (
         root: null,
         threshold: [0.25, 0.5, 0.75],
         rootMargin: '0px 0px -40% 0px',
-      }
+      },
     );
 
-    headings.forEach((section) => {
+    headings.forEach(section => {
       observer.observe(section);
     });
 
