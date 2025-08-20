@@ -123,13 +123,7 @@ export const publications = {
           R. Grefenstette, K. Madsen, B. Maughan, E. D. Miller, G. Schellenberger, and A. N. Wallbank{' '}
           <em>
             “Cross-Calibration of Galaxy Cluster Temperatures Measured with NuSTAR, XMM-Newton, and Chandra,”{' '}
-            <a
-              href="https://astro.utah.edu/~wik/group/fionalopez/Snapshot_Clusters_Paper.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-500 hover:underline">
-              Ready for submission to ApJ
-            </a>
+             Accepted, pending ApJ publication
           </em>
         </>
       ),
