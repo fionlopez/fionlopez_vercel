@@ -121,6 +121,7 @@ export const publications = {
         <>
           <strong>F. Lopez</strong>, D. R. Wik, C. Potter, R. A. Rojas Bolivar, A. Tümer, D. Eckert, F. Gastaldello, B.
           R. Grefenstette, K. Madsen, B. Maughan, E. D. Miller, G. Schellenberger, and A. N. Wallbank{' '}
+          {/* prettier-ignore */}
           <em>
             “Cross-Calibration of Galaxy Cluster Temperatures Measured with NuSTAR, XMM-Newton, and Chandra,” Accepted, pending ApJ publication
           </em>
