@@ -17,8 +17,8 @@ const Contact: FC = React.memo(() => {
             <br />
             Las Cruces, NM 88001
             <br />
-            <a href="mailto:fionalopez687@gmail.com" className="text-blue-500 hover:underline">
-              fionalopez687@gmail.com
+            <a href="mailto:fl@nmsu.edu" className="text-blue-500 hover:underline">
+              fl@nmsu.edu
             </a>
           </p>
         </div>
